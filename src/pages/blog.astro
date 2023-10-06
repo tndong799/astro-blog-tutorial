@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = await Astro.glob('./posts/*.md');
+---
+
+<Layout title="Blog astro">
+    <div class="text-red-500">Blog</div>
+    <ul>
+        {allPosts.map((post) => <BlogPost post={post} />)}
+    </ul>
+</Layout>
